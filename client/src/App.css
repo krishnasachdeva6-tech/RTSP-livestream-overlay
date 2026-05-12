@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.video-container {
+  position: relative;
+  width: 800px;
+  /* Fixed width for simplicity in assignment, or use percentage */
+  height: 450px;
+  background-color: #000;
+  border: 2px solid #333;
+  overflow: hidden;
+  /* Keep overlays inside */
+}
+
+.video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.overlay-item {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.5);
+  cursor: grab;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 100;
+  /* Ensure it is above video */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Slight background to see bounding box */
+}
+
+.overlay-item:hover {
+  border: 1px solid white;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.overlay-item.image-overlay img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* Let drag events pass to container */
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+
+.controls input,
+.controls button {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #444;
+}
+
+.overlay-controls {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
